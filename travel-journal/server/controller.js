@@ -27,9 +27,9 @@ module.exports =
             );
 
             create table cities(
-                city_id SERIAL PRIMARY KEY, 
+                city_id NOT NULL PRIMARY KEY, 
                 name VARCHAR(40) NOT NULL,
-                country_id INTEGER,
+                country_id INTEGER FOREIGN KEY REFERENCES countries(country_id),
                 rating INTEGER
             );  
 
